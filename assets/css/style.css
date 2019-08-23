@@ -1,0 +1,21 @@
+body {
+}
+
+h1,
+h3 {
+  align-content: center;
+}
+
+container {
+  background: lightgrey;
+  margin: 0px 30px 0px 30px;
+  padding: 20px;
+}
+
+container.img {
+  width: 200px;
+}
+
+div {
+  margin-top: 20px;
+}

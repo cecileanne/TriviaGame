@@ -131,6 +131,55 @@ const Dress12 = {
   award: `Best Actress`
 };
 
+// Start state where you cannot see questions or timer yet
+$(`#questionBlock`).hide();
+$(`#timeRemaining`).hide();
+$(`#timeDisplay`).hide();
+// Click button to begin / start quiz and timer / manipulate the DOM
+$(document).ready(function() {
+  $(`#startButton`).click(function() {
+    $(`#startButton`).hide();
+    $(`#questionBlock`).show();
+    $(`#timeRemaining`).show();
+    $(`#timeDisplay`).show();
+    $(`.form`).show();
+    $(`.dressImage`).show();
+    $(`.dressImageSolved`).hide();
+    $(`.dressImageCaption`).hide();
+  });
+});
+// Set variables
+let timeAllowed = 240;
+let correct = 0;
+
+const convertedTime = timeConverter(timeAllowed);
+// Convert seconds to minutes and seconds (mm:ss)
+function timeConverter(t) {
+  let minutes = Math.floor(t / 60);
+  let seconds = t - minutes * 60;
+  if (seconds < 10) {
+    seconds = "0" + seconds;
+  }
+  if (minutes === 0) {
+    minutes = "00";
+  } else if (minutes < 10) {
+    minutes = "0" + minutes;
+  }
+  return minutes + ":" + seconds;
+}
+// Set counter to 4:00min or 2400 seconds
+$(`#timeDisplay`).html(convertedTime);
+
+// Set the timer as a countdown to answer the questions
+//function countdown() {
+//    convertedTime--;
+
+// When time runs out display Times Up under the 0:00
+//  $(`#timeRemaining`).append("<h3>Time's Up!</h3>");
+//}
+// Listens for user to click options
+// TO NICK OR SAL - I totally just realized I should have made my questions arrays and done for loops but I'd already written them so oh well.. If I had more time I would.
+
 // correct answer ids
 //  q1choice2
 //  q2choice4
@@ -139,14 +188,20 @@ const Dress12 = {
 //  q5choice1
 //  q6choice4
 //  q7choice2
-//  q8choice1
-//  q9choice3
-//  q10choice2
+//  X q8choice1
+//  X q9choice3
+//  X q10choice2
 //  q11choice4
-//  q12choice3
+//  X q12choice3
 
-// When times up - solved images appear along with the appending text below.
-// Unanswered items and wrong ids will be Incorrect - and will say so
+// When time runs out (if time also if all questions have been answered)
+//      Timer says Time's up! below time remaining (which should read 0)
+//      hide unsolved images, show solved
+//      show trivia answers as a caption to the pictures (see below), hide the form radios
+//      Compares the userSelection to correct answer
+//          Counts the number correct
+//  Displays number correct "You got X/12!", treats unanswered as incorrect
+// "Try again?"" button resets
 
 // trivia to append to Correct! or Incorrect!
 //  1 Barbra Streisand did not realize the pantsuit was see-through until she saw the pictures.
@@ -161,35 +216,3 @@ const Dress12 = {
 //  10 Elizabeth Taylor won her first Best Actress Oscar in 1961 for "Butterfield 8".
 //  11 In 2002, Halle Berry became the first African American woman to win Best Actress in this stunning Elie Saab dress.
 //  12 Jane Fonda won her first Best Actress Oscar in 1972 for "Klute".
-
-// Time remaining total
-// Count how many correct out of 12
-// Try again button appears - resets game to 0
-
-// Start state you cannot see questions
-$(`#questionBlock`).hide();
-// Click button to begin / start quiz and timer
-$(document).ready(function() {
-  $(`#startButton`).click(function() {
-    $(`#startButton`).hide();
-    $(`#questionBlock`).show();
-    $(`timeRemaining`).show();
-    $(`.form`).show();
-    $(`.dressImage`).show();
-    $(`.dressImageSolved`).hide();
-    $(`.dressImageCaption`).hide();
-  });
-});
-// Set variables
-//  time remaining
-//  number correct
-// Populate unsolved images into the question block while hiding the solved
-// Listens for user to click options
-// TO NICK OR SAL - I totally just realized I should have made my questions arrays and done for loops but I'd already written them so oh well.. If I had more time I would.
-// When time runs out
-//  hide unsolved images, show solved
-//  show trivia answers as a caption to the pictures
-// Compares the userSelection to correct answer
-// Counts the number correct
-//  number correct "You got X/12!", treats unanswered as incorrect
-// "Try again?"" button resets

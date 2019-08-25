@@ -1,5 +1,5 @@
 body {
-  background-image: "assets/images/oscarBackground.jpg";
+  background-image: url("assets/images/oscarBackground.jpg");
 }
 
 header {
@@ -7,21 +7,21 @@ header {
   position: fixed;
   top: 0;
   z-index: 10;
+  text-align: center;
 }
 
 h1,
 h3 {
   align-content: center;
+  text-align: center;
 }
 
-.container {
-  background: lightgrey;
-  margin: 500px 30px 0px 30px;
-  padding: 20px;
+#questionBlock {
+  margin-top: 220px;
 }
 
 .question {
-  margin-top: 250px;
+  margin-top: 20px;
   margin-left: 10%;
   margin-right: 10%;
   border: solid;
@@ -31,10 +31,11 @@ h3 {
   background: lightgoldenrodyellow;
 }
 
-.col-md-6.img {
+img {
   max-height: 200px;
 }
 
 .unfixedFooter {
   align-content: center;
+  text-align: center;
 }

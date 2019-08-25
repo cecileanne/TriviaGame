@@ -173,5 +173,23 @@ $(document).ready(function() {
   $(`#startButton`).click(function() {
     $(`#startButton`).hide();
     $(`#questionBlock`).show();
+    $(`timeRemaining`).show();
+    $(`.form`).show();
+    $(`.dressImage`).show();
+    $(`.dressImageSolved`).hide();
+    $(`.dressImageCaption`).hide();
   });
 });
+// Set variables
+//  time remaining
+//  number correct
+// Populate unsolved images into the question block while hiding the solved
+// Listens for user to click options
+// TO NICK OR SAL - I totally just realized I should have made my questions arrays and done for loops but I'd already written them so oh well.. If I had more time I would.
+// When time runs out
+//  hide unsolved images, show solved
+//  show trivia answers as a caption to the pictures
+// Compares the userSelection to correct answer
+// Counts the number correct
+//  number correct "You got X/12!", treats unanswered as incorrect
+// "Try again?"" button resets

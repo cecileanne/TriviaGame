@@ -24,144 +24,364 @@
                 <p>Best Actress Oscar Dresses - The Quiz</p>
             </div>
             <div class="card-body">
-                <button id="startButton">Let's get dressed!</button>
+                <button id="startButton">Let's raid the Oscar closet!</button>
                 <h3 class="card-title" id="timeRemaining"></h3>
                 <div id="correctAmountStatus"><h3></h3></div>
             </div>
         </div>
     </header>
 
-<container id="questionBlock">
-      <div class="question">
+<div id="questionBlock">
+    <div class="question">
         <div class="row">
-        <h5>Who wore this pantsuit by Arnold Scaasi in 1969?</h5>
+            <h5>Who wore this pantsuit by Arnold Scaasi in 1969?</h5>
         </div>
         <div class="row">
             <div class="col-md-6">
-                <div id="q1Img"></div>
-                <div id="q1Imgsolved"></div>
-                <div id="q1Imgcaption"></div>
+                <div class="dressImage" id="q1Img"><img src="assets/images/001.jpg" alt="sheer pantsuit"></div>
+                <div class="dressImageSolved" id="q1Imgsolved"><img src="assets/images/001-solved.jpg" alt="Barbra Streisand in sheer pantsuit"></div>
             </div>
             <div class="col-md-6">
+                <div class="correct"></div>
+                <div class="incorrect"></div>
+                <div class="dressImageCaption" id="q2Imgcaption"></div>
                 <div class="form">
                     <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="q1choice1" value="option1">
-                    <label class="form-check-label" for="exampleRadios1">
-                    Audrey Hepburn
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="q1choice2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
-                    Barbra Streisand
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="q1choice3" value="option3">
-                    <label class="form-check-label" for="exampleRadios3">
-                    Julie Andrews
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="q1choice4" value="option4">
-                    <label class="form-check-label" for="exampleRadios3">
-                    Katharine Hepburn
-                    </label>
-                </div>
-            </div>
-        </div>
-      </div>
-
-<hr>
-
-<div class="row">
-        <h5>Who wore this bubblegum pink dress to the Oscars?<h5>
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                    <div id="q2Img"></div>
-                    <div id="q2Imgsolved"></div>
-                    <div id="q2Imgcaption"></div>
-            </div>
-            <div class="col-md-6">
-                <div class="form">
-                    <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="q2choice1" value="option1">
-                    <label class="form-check-label" for="exampleRadios1">
-                    Natalie Portman
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="q2choice2" value="option2">
-                    <label class="form-check-label" for="exampleRadios2">
-                    Kiera Knightly
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="q2choice3" value="option3">
-                    <label class="form-check-label" for="exampleRadios3">
-                    Ann Hathaway
-                    </label>
-                </div>
-                <div class="form-check">
-                    <input class="form-check-input" type="radio" name="exampleRadios" id="q2choice4" value="option4">
-                    <label class="form-check-label" for="exampleRadios3">
-                    Gwyneth Paltrow
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <hr>
-
-        <div class="row">
-                <h5>What actress picked up her Oscar for playing a real-life person in this sleek dress?<h5>
-                </div>
-                <div class="row">
-                    <div class="col-md-6">
-                            <div id="q3Img"></div>
-                            <div id="q3Imgsolved"></div>
-                            <div id="q3Imgcaption"></div>
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q1choice1" value="option1">
+                        <label class="form-check-label" for="exampleRadios1">
+                        Audrey Hepburn
+                        </label>
                     </div>
-                    <div class="col-md-6">
-                        <div class="form">
-                            <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="q3choice1" value="option1">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q1choice2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                        Barbra Streisand
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q1choice3" value="option3">
+                        <label class="form-check-label" for="exampleRadios3">
+                        Julie Andrews
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q1choice4" value="option4">
+                        <label class="form-check-label" for="exampleRadios3">
+                        Katharine Hepburn
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="question">
+        <div class="row">
+            <h5>Who wore this bubblegum pink dress to the Oscars?<h5>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="dressImage" id="q2Img"><img src="assets/images/002.jpg" alt="pink dress"></div>
+                <div class="dressImageSolved" id="q2Imgsolved"><img src="assets/images/002-solved.jpg" alt="Gwenyth Paltrow in pink dress"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="correct"></div>
+                <div class="incorrect"></div>
+                <div class="dressImageCaption" id="q2Imgcaption"></div>
+                <div class="form">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q2choice1" value="option1">
+                        <label class="form-check-label" for="exampleRadios1">
+                        Natalie Portman
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q2choice2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                        Kiera Knightly
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q2choice3" value="option3">
+                        <label class="form-check-label" for="exampleRadios3">
+                        Ann Hathaway
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q2choice4" value="option4">
+                        <label class="form-check-label" for="exampleRadios3">
+                        Gwyneth Paltrow
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+        <div class="row">
+            <h5>What actress picked up her Oscar for playing a real-life person in this sleek dress?<h5>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="dressImage" id="q3Img"><img src="assets/images/003.jpg" alt="black floor length dress"></div>
+                <div class="dressImageSolved" id="q3Imgsolved"><img src="assets/images/003-solved.jpg" alt="Julia Roberts in black floor length dress"></div>
+            </div>
+            <div class="col-md-6">
+                <div class="correct"></div>
+                <div class="incorrect"></div>
+                <div class="dressImageCaption" id="q3Imgcaption"></div>
+                <div class="form">
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q3choice1" value="option1">
+                        <label class="form-check-label" for="exampleRadios1">
+                        Renee Zellwegger
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q3choice2" value="option2">
+                        <label class="form-check-label" for="exampleRadios2">
+                        Cate Blanchett
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q3choice3" value="option3">
+                        <label class="form-check-label" for="exampleRadios3">
+                        Julia Roberts
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="exampleRadios" id="q3choice4" value="option4">
+                        <label class="form-check-label" for="exampleRadios3">
+                        Nicole Kidman
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="question">
+            <div class="row">
+                <h5>Who wore this white lace Givenchy dress to the Oscars?<h5>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dressImage" id="q4Img"><img src="assets/images/004.jpg" alt="white lace dress"></div>
+                    <div class="dressImageSolved" id="q4Imgsolved"><img src="assets/images/004-solved.jpg" alt="Audrey Hepburn in white lace dress"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="correct"></div>
+                    <div class="incorrect"></div>
+                    <div class="dressImageCaption" id="q4Imgcaption"></div>
+                    <div class="form">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q4choice1" value="option1">
                             <label class="form-check-label" for="exampleRadios1">
-                            Renee Zellwegger
+                            Julie Christie
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="q3choice2" value="option2">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q4choice2" value="option2">
                             <label class="form-check-label" for="exampleRadios2">
-                            Cate Blanchett
+                            Shirley Temple
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="q3choice3" value="option3">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q4choice3" value="option3">
                             <label class="form-check-label" for="exampleRadios3">
+                            Audrey Hepburn
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q4choice4" value="option4">
+                            <label class="form-check-label" for="exampleRadios3">
+                            Jodie Foster
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="question">
+            <div class="row">
+                <h5>The actress who wore this dress won more than once - Who is she?<h5>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dressImage" id="q5Img"><img src="assets/images/005.jpg" alt="white gown"></div>
+                    <div class="dressImageSolved" id="q5Imgsolved"><img src="assets/images/005-solved.jpg" alt="Jennifer Lawrence in white gown"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="correct"></div>
+                    <div class="incorrect"></div>
+                    <div class="dressImageCaption" id="q5Imgcaption"></div>
+                    <div class="form">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q5choice1" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                            Jennifer Lawrence
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q5choice2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                            Jane Fonda
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q5choice3" value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                            Jodie Foster
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q5choice4" value="option4">
+                            <label class="form-check-label" for="exampleRadios3">
+                            Meryl Streep
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="question">
+            <div class="row">
+                <h5>This actress has worn designs by Bob Mackie to multiple Oscar awards ceremonies.<h5>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dressImage" id="q6Img"><img src="assets/images/006.jpg" alt="sequined dress"></div>
+                    <div class="dressImageSolved" id="q6Imgsolved"><img src="assets/images/006-solved.jpg" alt="Cher in sequined dress"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="correct"></div>
+                    <div class="incorrect"></div>
+                    <div class="dressImageCaption" id="q6Imgcaption"></div>
+                    <div class="form">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q6choice1" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                            Lady Gaga
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q6choice2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                            Liza Minelli
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q6choice3" value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                            Geena Davis
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q6choice4" value="option4">
+                            <label class="form-check-label" for="exampleRadios3">
+                            Cher
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="question">
+            <div class="row">
+                <h5>Dior is a popular designer, as this actress chose a dress from the House of Dior when she was nominated.<h5>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dressImage" id="q7Img"><img src="assets/images/007.jpg" alt="mermaid dress with gold embellishments"></div>
+                    <div class="dressImageSolved" id="q7Imgsolved"><img src="assets/images/007-solved.jpg" alt="Reese Witherspoon in gold-embellished mermaid dress"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="correct"></div>
+                    <div class="incorrect"></div>
+                    <div class="dressImageCaption" id="q7Imgcaption"></div>
+                    <div class="form">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q7choice1" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
+                            Emma Stone
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q7choice2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                            Reese Witherspoon
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q7choice3" value="option3">
+                            <label class="form-check-label" for="exampleRadios3">
+                            Lupita Nyong'o
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q7choice4" value="option4">
+                            <label class="form-check-label" for="exampleRadios3">
+                            Hillary Swank
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <div class="question">
+            <div class="row">
+                <h5>Which actress went with floral accents for her Oscar day win?<h5>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="dressImage" id="q11Img"><img src="assets/images/011.jpg" alt="floral top with burgundy skirt"></div>
+                    <div class="dressImageSolved" id="q11Imgsolved"><img src="assets/images/011-solved.jpg" alt="Halle Berry in floral top with burgundy skirt"></div>
+                </div>
+                <div class="col-md-6">
+                    <div class="correct"></div>
+                    <div class="incorrect"></div>
+                    <div class="dressImageCaption" id="q11Imgcaption"></div>
+                    <div class="form">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q11choice1" value="option1">
+                            <label class="form-check-label" for="exampleRadios1">
                             Julia Roberts
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="exampleRadios" id="q3choice4" value="option4">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q11choice2" value="option2">
+                            <label class="form-check-label" for="exampleRadios2">
+                            Helen Hunt
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q11choice3" value="option3">
                             <label class="form-check-label" for="exampleRadios3">
-                            Nicole Kidman
+                            Amy Adams
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="exampleRadios" id="q11choice4" value="option4">
+                            <label class="form-check-label" for="exampleRadios3">
+                            Halle Berry
                             </label>
                         </div>
                     </div>
                 </div>
-                <hr>
-
-
-
-
-<br>
-<br>
-<br>
-<div class="unfixedFooter">
-    <p>Dress images created by <a href=https//www.biggroup.co.uk>Big Group</a> for msn.com</p>
+            </div>
+        </div>        
+    <br>
+    <br>
+    <br>
+    <div class="unfixedFooter">
+        <p>Dress images created by <a href=https//www.biggroup.co.uk>Big Group</a> for msn.com</p>
     </div>
-    <script src="assets/javascript/app.js"></script>
-  </body>
+</div>
+<script src="assets/javascript/app.js"></script>
+</body>
 </html>

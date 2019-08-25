@@ -150,33 +150,53 @@ $(document).ready(function() {
 });
 // Set variables
 let timeAllowed = 240;
+let intervalID;
 let correct = 0;
 
-const convertedTime = timeConverter(timeAllowed);
-// Convert seconds to minutes and seconds (mm:ss)
-function timeConverter(t) {
-  let minutes = Math.floor(t / 60);
-  let seconds = t - minutes * 60;
-  if (seconds < 10) {
-    seconds = "0" + seconds;
+// Wrap everything in a function so it doesn't break my hides and shows
+function countdown() {
+  // Set the timer as a countdown by the second to answer the questions
+  function runClock() {
+    intervalID = setInterval(decrement, 1000);
   }
-  if (minutes === 0) {
-    minutes = "00";
-  } else if (minutes < 10) {
-    minutes = "0" + minutes;
+
+  function decrement() {
+    timeAllowed--;
+    return timeRemaining;
   }
-  return minutes + ":" + seconds;
+
+  const convertedTime = timeConverter(timeRemaining);
+  // Convert seconds to minutes and seconds (mm:ss)
+  function timeConverter(t) {
+    let minutes = Math.floor(t / 60);
+    let seconds = t - minutes * 60;
+    if (seconds < 10) {
+      seconds = "0" + seconds;
+    }
+    if (minutes === 0) {
+      minutes = "00";
+    } else if (minutes < 10) {
+      minutes = "0" + minutes;
+    }
+    return minutes + ":" + seconds;
+  }
+  // Set counter to 4:00min or 2400 seconds
+  $(`#timeDisplay`).html(convertedTime);
+
+  // When time runs out display Times Up under the 0:00
+  if (timeRemaining <= 0) {
+    stop();
+    $(`#timeRemaining`).append("<h3>  Time's Up!</h3>");
+    revealAnswers();
+  }
+  // Stop function Clear the div so timer does not go past 00:00
+  function stop() {
+    clearInterval(intervalID);
+  }
+
+  runClock();
 }
-// Set counter to 4:00min or 2400 seconds
-$(`#timeDisplay`).html(convertedTime);
 
-// Set the timer as a countdown to answer the questions
-//function countdown() {
-//    convertedTime--;
-
-// When time runs out display Times Up under the 0:00
-//  $(`#timeRemaining`).append("<h3>Time's Up!</h3>");
-//}
 // Listens for user to click options
 // TO NICK OR SAL - I totally just realized I should have made my questions arrays and done for loops but I'd already written them so oh well.. If I had more time I would.
 
@@ -194,25 +214,33 @@ $(`#timeDisplay`).html(convertedTime);
 //  q11choice4
 //  X q12choice3
 
+//      function revealAnswers() {
+// hide unsolved images, show solved
+// show trivia answers as a caption to the pictures (see below), hide the form radios
+//      $(`.form`).hide();
+//      $(`.dressImage`).hide();
+//      $(`.dressImageSolved`).show();
+//      $(`.dressImageCaption`).show();
 // When time runs out (if time also if all questions have been answered)
-//      Timer says Time's up! below time remaining (which should read 0)
-//      hide unsolved images, show solved
-//      show trivia answers as a caption to the pictures (see below), hide the form radios
+// Timer says Time's up! below time remaining (which should read 0)
+//
+
 //      Compares the userSelection to correct answer
 //          Counts the number correct
 //  Displays number correct "You got X/12!", treats unanswered as incorrect
 // "Try again?"" button resets
+//}
 
 // trivia to append to Correct! or Incorrect!
-//  1 Barbra Streisand did not realize the pantsuit was see-through until she saw the pictures.
-//  2 This dress was so iconic it became known as "Gwyneth Paltrow's Pink Ralph Lauren dress".
-//  3 Julia Roberts' dress was designed by Valentino.
-//  4 Audrey Hepburn won for her portrayal of Princess Ann in Roman Holiday.
-//  5 Jennifer Lawrence was the face of Christian Dior, so it made sense she would wear it to the Oscars.
-//  6 Cher frequently wears designs by Bob Mackie to the Oscars, and 1988 was no different when she won for Moonstruck.
-//  7 Reese Witherspoon won in 2006 for her portrayal of June Carter Cash in the biopic "Walk the Line".
-//  8 Diane Keaton's unconventional style was on display in 1978 when she won for "Annie Hall". The designer of her outfit is unknown.
-//  9 Cate Blanchett's character in "Blue Jasmine" was crazy but there was nothing crazy about this Armani Prive dress.
-//  10 Elizabeth Taylor won her first Best Actress Oscar in 1961 for "Butterfield 8".
-//  11 In 2002, Halle Berry became the first African American woman to win Best Actress in this stunning Elie Saab dress.
-//  12 Jane Fonda won her first Best Actress Oscar in 1972 for "Klute".
+//      $(`#q1Imgcaption`).html(`Barbra Streisand did not realize the pantsuit was see-through until she saw the pictures.`)
+//      $(`#q2Imgcaption`).html(`This dress was so iconic it became known as "Gwyneth Paltrow's Pink Ralph Lauren dress".`)
+//      $(`#q3Imgcaption`).html(`Julia Roberts' dress was designed by Valentino.`)
+//      $(`#q4Imgcaption`).html(`Audrey Hepburn won for her portrayal of Princess Ann in Roman Holiday.`)
+//      $(`#q5Imgcaption`).html(`Jennifer Lawrence was the face of Christian Dior, so it made sense she would wear it to the Oscars.`)
+//      $(`#q6Imgcaption`).html(`Cher frequently wears designs by Bob Mackie to the Oscars, and 1988 was no different when she won for Moonstruck.`)
+//      $(`#q7Imgcaption`).html(`Reese Witherspoon won in 2006 for her portrayal of June Carter Cash in the biopic "Walk the Line".`)
+//      $(`#q8Imgcaption`).html(`Diane Keaton's unconventional style was on display in 1978 when she won for "Annie Hall". The designer of her outfit is unknown.`)
+//      $(`#q9Imgcaption`).html(`Cate Blanchett's character in "Blue Jasmine" was crazy but there was nothing crazy about this Armani Prive dress.`)
+//      $(`#q10Imgcaption`).html(`Elizabeth Taylor won her first Best Actress Oscar in 1961 for "Butterfield 8".`)
+//      $(`#q11Imgcaption`).html(`In 2002, Halle Berry became the first African American woman to win Best Actress in this stunning Elie Saab dress.`)
+//      $(`#q12Imgcaption`).html(`Jane Fonda won her first Best Actress Oscar in 1972 for "Klute".`)
